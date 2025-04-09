@@ -30,7 +30,7 @@ delta_t = 10
 nt = T_tot / delta_t
 
 
-for t in range(nt):
+for t in range(nt): #this is not right but i have my idea. ill think abt iterations later
     t = t_0 + delta_t #current time
 # advance solution in time 
     # each t (recursive eq)
