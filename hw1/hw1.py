@@ -2,6 +2,7 @@ import numpy as np
 import  matplotlib.pyplot as plt
 
 
+
 # organize and declare all variables
 
 # initialize all constants and parameters
@@ -12,13 +13,7 @@ dtheta = 0.005 #K/m
 z_0 = 100 #m
 w_0 = 0 
 
-# set up initial conditions. w = w0, zp = z0
-
-w = w0
-zp = z_0
-t_0 = 0
-# figure out arrays and files
-# main loop (marching in time) 
+N = np.sqrt((g / theta) * dtheta)
 
 # loop : 1, nt 
 # t_total 
@@ -27,6 +22,16 @@ delta_t = 10
 
 nt = T_tot / delta_t
 
+# set up initial conditions. w = w0, zp = z0
+
+
+# figure out arrays and files
+zp = np.zeros(nt + 1)
+w = np.zeros(nt + 1)
+
+w[0] = w_0
+zp[0] = z_0
+t_0 = 0
 
 for t in range(nt): #this is not right but i have my idea. ill think abt iterations later
     t = t_0 + delta_t #current time
@@ -38,5 +43,5 @@ for t in range(nt): #this is not right but i have my idea. ill think abt iterati
     z_exact =
     
 # calculate error 
-    err_t = error(z_exact, z_approx)
+    err_t = 
 # save
