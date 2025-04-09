@@ -1,18 +1,16 @@
+import numpy as np
+import  matplotlib.pyplot as plt
+
 
 # organize and declare all variables
-
-def error(z_exact, z_approx):
-    err = abs(z_exact - z_approx)
-    return err
 
 # initialize all constants and parameters
 
 g = 9.81 #m/s
 theta = 290 #K
-dtheta = 5 #K/km
+dtheta = 0.005 #K/m
 z_0 = 100 #m
-w_0 = #idk lmao
-
+w_0 = 0 
 
 # set up initial conditions. w = w0, zp = z0
 
