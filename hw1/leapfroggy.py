@@ -39,12 +39,13 @@ def leapfroggy(delta_t):
         
     return time, zp, z_exact, w, errors
 
-time, zp, z_exact, w, errors = leapfroggy(10)
+time_10, zp_10, z_exact_10, w_10, errors_10 = leapfroggy(20)
+time_1, zp_1, z_exact_1, w_1, errors_1 = leapfroggy(1)
 
-print(zp)
 
 plt.figure(1)
-plt.plot(time, zp, label='numerical')
+plt.plot(time_10, zp_10, label='t = 20')
+plt.plot(time_1, zp_1, label='t = 1')
 plt.xlabel('time (s)')
 plt.ylabel('vertical position (m)')
 plt.legend()
