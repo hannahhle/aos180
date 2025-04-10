@@ -31,7 +31,7 @@ def leapfroggy(delta_t):
     zp[1] = zp[0] + delta_t * w[0]
     w[1] = w[0] + (delta_t * -N**2 * zp[0])
 
-    for t in range(nt): #an idea of sorts
+    for t in range(1, nt): #an idea of sorts
         zp[t + 1] = zp[t - 1] + 2 * delta_t * w[t]  
         w[t + 1] = w[t - 1] + 2 * (delta_t * -N**2 * zp[t])
         z_exact[t + 1] = z_0 * np.cos(N * time[t + 1])
