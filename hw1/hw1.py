@@ -22,16 +22,18 @@ delta_t = 10
 
 nt = T_tot / delta_t
 
-# set up initial conditions. w = w0, zp = z0
-
+time = np.linspace(0, T_tot, nt + 1)
 
 # figure out arrays and files
 zp = np.zeros(nt + 1)
+z_exact = np.zeros(nt + 1)
 w = np.zeros(nt + 1)
+errors = np.zeros(nt + 1)
 
 w[0] = w_0
 zp[0] = z_0
-t_0 = 0
+z_exact[0] = z_0 * np.cos(N * time[0])
+errors[0] = abs(z_exact[0] - zp[0])
 
 for t in range(nt): #this is not right but i have my idea. ill think abt iterations later
     t = t_0 + delta_t #current time
@@ -40,7 +42,7 @@ for t in range(nt): #this is not right but i have my idea. ill think abt iterati
 # update variables
     t_0 = t
 # calculate exact soultion
-    z_exact =
+    z_exact
     
 # calculate error 
     err_t = 
