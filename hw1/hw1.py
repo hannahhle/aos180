@@ -10,12 +10,10 @@ z_0 = 100 #m
 w_0 = 0 
 T_tot = 2000 #seconds
 
-delta_t = [10, 1]
-
 N = np.sqrt((g / theta) * dtheta)
 
 def lolforgot(delta_t):
-    nt = int(T_tot / delta_t)
+    nt = int(T_tot / delta_t) #error here idk ill come back (int)
 
     #figure out arrays
     time = np.linspace(0, T_tot, nt + 1)
@@ -39,15 +37,19 @@ def lolforgot(delta_t):
     return time, zp, z_exact, w, errors
 # save
 
-for t in delta_t:
-    time, zp, z_exact, w, errors = lolforgot(delta_t)
+#I BROKE THIS!!!!!!!!!!!!!!!!!!!!!!!
+
+delta_t_list = [10, 1]
+
+for t in delta_t_list:
+    time, zp, z_exact, w, errors = lolforgot(t)
 
     plt.figure()
     plt.plot(time, zp, label='numerical')
     plt.xlabel('time (s)')
     plt.ylabel('vertical position (m)')
     plt.legend()
-    plt.title('position vs time (euler forward, delta t = 10)')
+    plt.title('position vs time (euler forward, delta t = {}', format(t))
     plt.grid(True)
     plt.show()
 
@@ -56,7 +58,7 @@ for t in delta_t:
     plt.xlabel('time (s)')
     plt.ylabel('vertical position (m)')
     plt.legend()
-    plt.title('position vs time (euler forward, delta t = 10)')
+    plt.title('position vs time (euler forward, delta t = {}', format(t))
     plt.grid(True)
     plt.show()
 
@@ -66,6 +68,6 @@ for t in delta_t:
     plt.ylabel('error')
     #plt.xscale('log')
     plt.yscale('log')
-    plt.title('euler forward error (delta t = 10)')
+    plt.title('euler forward error (delta t = {}', format(t))
     plt.grid(True)
     plt.show()
