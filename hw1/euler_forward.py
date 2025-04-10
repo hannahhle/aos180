@@ -12,7 +12,7 @@ T_tot = 2000 #seconds
 
 N = np.sqrt((g / theta) * dtheta)
 
-def lolforgot(delta_t):
+def euler_forward(delta_t):
     nt = int(T_tot / delta_t) #error here idk ill come back (int)
 
     #figure out arrays
@@ -37,37 +37,37 @@ def lolforgot(delta_t):
     return time, zp, z_exact, w, errors
 # save
 
-#I BROKE THIS!!!!!!!!!!!!!!!!!!!!!!!
+#need to change plots so both dt show on one graph
 
 delta_t_list = [10, 1]
 
 for t in delta_t_list:
-    time, zp, z_exact, w, errors = lolforgot(t)
+    time, zp, z_exact, w, errors = euler_forward(t)
 
-    plt.figure()
+    plt.figure(1)
     plt.plot(time, zp, label='numerical')
     plt.xlabel('time (s)')
     plt.ylabel('vertical position (m)')
     plt.legend()
-    plt.title('position vs time (euler forward, delta t = {}', format(t))
+    plt.title('position vs time (euler forward, delta t =')
     plt.grid(True)
     plt.show()
 
-    plt.figure()
+    plt.figure(2)
     plt.plot(time, z_exact, '--', label='analytical')
     plt.xlabel('time (s)')
     plt.ylabel('vertical position (m)')
     plt.legend()
-    plt.title('position vs time (euler forward, delta t = {}', format(t))
+    plt.title('position vs time (euler forward, delta t = ')
     plt.grid(True)
     plt.show()
 
-    plt.figure()
+    plt.figure(3)
     plt.plot(time, errors)
     plt.xlabel('time (s)')
     plt.ylabel('error')
     #plt.xscale('log')
     plt.yscale('log')
-    plt.title('euler forward error (delta t = {}', format(t))
+    plt.title('euler forward error (delta t = ')
     plt.grid(True)
     plt.show()
