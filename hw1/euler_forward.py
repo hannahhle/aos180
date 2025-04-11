@@ -42,6 +42,8 @@ def euler_forward(delta_t):
 time_10, zp_10, z_exact_10, w_10, errors_10 = euler_forward(10)
 time_1, zp_1, z_exact_1, w_1, errors_1 = euler_forward(1)
 
+# FOR MY FIRST PART!!!
+
 plt.figure(1)
 plt.plot(time_10, zp_10, label='∆t = 10', color = 'slateblue')
 plt.plot(time_1, zp_1, label='∆t = 1', color = 'indigo')
@@ -72,7 +74,7 @@ plt.title('position vs time (euler forward ∆t = 1)')
 plt.grid(True)
 plt.show()
 
-
+# PART NUMBA TWOOOOOO
 
 plt.figure(2)
 plt.plot(time_10, z_exact_10, label='∆t = 10', color = 'slateblue')
