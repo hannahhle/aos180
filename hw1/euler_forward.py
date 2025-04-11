@@ -76,16 +76,40 @@ plt.show()
 
 # PART NUMBA TWOOOOOO
 
-plt.figure(2)
-plt.plot(time_10, z_exact_10, label='∆t = 10', color = 'slateblue')
-plt.plot(time_1, z_exact_1, label = '∆t = 1', color = 'indigo')
-plt.xlabel('time (s)')
-plt.ylabel('vertical position (m)')
+#everything everywhere all at once
+plt.figure(4)
+plt.plot(zp_10, w_10, label='∆t = 10', color = 'slateblue')
+plt.plot(zp_1, w_1, label = '∆t = 1', color = 'indigo')
+plt.xlabel('vertical position (m)')
+plt.ylabel('vertical velocity (m/s)')
 plt.legend()
 plt.title('exact position vs time (euler forward)')
 plt.grid(True)
 plt.show()
 
+#just t=10
+plt.figure(5)
+plt.plot(zp_10, w_10, label='∆t = 10', color = 'slateblue')
+plt.xlabel('vertical position (m)')
+plt.ylabel('vertical velocity (m/s)')
+plt.legend()
+plt.title('position (z) vs velocity (w) [euler forward ∆t = 10]')
+plt.grid(True)
+plt.show()
+
+#just t=1
+plt.figure(6)
+plt.plot(zp_1, w_1, label = '∆t = 1', color = 'indigo')
+plt.xlabel('vertical position (m)')
+plt.ylabel('vertical velocity (m/s)')
+plt.legend()
+plt.title('position (z) vs velocity (w) [euler forward ∆t = 1]')
+plt.grid(True)
+plt.show()
+
+#PTHREE
+
+# my errors (sadddd)
 plt.figure(3)
 plt.plot(time_10, errors_10, label = '∆t = 10', color = 'slateblue')
 plt.plot(time_1, errors_1, label = '∆t = 1', color = 'indigo')
